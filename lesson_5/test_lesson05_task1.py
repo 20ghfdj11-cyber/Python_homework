@@ -15,7 +15,7 @@ def test_navigation():
             if "/forms/post" in driver.current_url:
                 pass 
             else:
-                raise Exception("Страница после перехода не та, что ожидали.")
+                raise Exception("Страница не та.")
         except:
             pass
         finally:

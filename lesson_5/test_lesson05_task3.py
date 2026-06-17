@@ -8,7 +8,7 @@ def test_multiple_elements():
     links = driver.find_elements(By.TAG_NAME, "a")
     
     print(f"Найдено ссылок: {len(links)}")
-    assert len(links) == 9, "Количество ссылок не равно 9"
+    assert len(links) == 9, "Количество ссылок не = 9"
 
     all_visible = True
     for link in links:

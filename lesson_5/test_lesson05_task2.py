@@ -16,9 +16,9 @@ def test_form_submission():
     time.sleep(3) 
 
     if driver.current_url != "https://httpbin.org/forms/post":
-        print("URL изменился успешно.")
+        print("URL успешно изменился.")
     else:
-        print("URL остался тем же, что и раньше.")
+        print("URL остался тем же.")
 
     driver.quit()
 
