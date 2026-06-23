@@ -25,7 +25,7 @@ def test_dynamic_loading():
         actual_text = finish_text_element.text
         assert (
             actual_text == "Hello World!"
-        ), f"Ожидался текст 'Hello World!', но был получен '{actual_text}'"
+        ), f"Ожидался текст 'Hello World!', вместо него был получен '{actual_text}'"
 
     finally:
         driver.quit()
