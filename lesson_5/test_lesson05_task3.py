@@ -1,12 +1,13 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+
 def test_multiple_elements():
     driver = webdriver.Chrome()
     driver.get("https://httpbin.org/links/10")
 
     links = driver.find_elements(By.TAG_NAME, "a")
-    
+
     print(f"Найдено ссылок: {len(links)}")
     assert len(links) == 9, "Количество ссылок не равно 9"
 
@@ -20,9 +21,12 @@ def test_multiple_elements():
 
     first_link_text = links[0].text
     print(f"Текст первой ссылки: {first_link_text}")
-    assert "1" in first_link_text, "Текст первой ссылки не содержит '1'"
+    msg = "Текст первой ссылки не содержит '1'"
+    assert "1" in first_link_text, msg
 
     driver.quit()
 
+
 if __name__ == "__main__":
     test_multiple_elements()
+    
