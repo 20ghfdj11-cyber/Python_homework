@@ -9,23 +9,25 @@ def test_dynamic_loading():
     driver = webdriver.Chrome()
 
     try:
-
         driver.get("https://the-internet.herokuapp.com/dynamic_loading/2")
-        start_button = driver.find_element(By.CSS_SELECTOR, "#start button")
-        start_button.click()
 
         wait = WebDriverWait(driver, 10)
+        start_button = wait.until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "#start button"))
+        )
+        start_button.click()
+
         finish_text_element = wait.until(
             EC.visibility_of_element_located((By.ID, "finish"))
         )
 
-        os.makedirs("screenshots", exist_ok=True)
+        os.makedirs("screenshots_lesson_6", exist_ok=True)
         driver.save_screenshot("screenshots_lesson_6/dynamic_loading.png")
 
         actual_text = finish_text_element.text
         assert (
             actual_text == "Hello World!"
-        ), f"Ожидался текст 'Hello World!', вместо него был получен '{actual_text}'"
+        ), f"Ожидался текст 'Hello World!', вместо него получен '{actual_text}'"
 
     finally:
         driver.quit()
