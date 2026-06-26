@@ -16,7 +16,7 @@ def wait_for_page_load(driver, timeout=10):
     wait.until(lambda d: d.execute_script("return document.readyState") == "complete")
 
 
-def main():
+def test_session_storage_auth():
     driver = webdriver.Chrome()
 
     try:
@@ -94,4 +94,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    test_session_storage_auth()

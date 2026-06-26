@@ -22,7 +22,7 @@ def test_dynamic_loading():
         )
 
         os.makedirs("screenshots_lesson_6", exist_ok=True)
-        driver.save_screenshot("screenshots_lesson_6/dynamic_loading.png")
+        driver.save_screenshot("screenshots/dynamic_loading.png")
 
         actual_text = finish_text_element.text
         assert (
